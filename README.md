@@ -5,7 +5,8 @@ Dimensionality reduction methods like t-distributed stochastic neighbor embeddin
 The script multivariate_temporal_trajectories_visualization.py allows for reading longitudinal, multi-dimensional data of arbitrary number of instances (objects) and transforms the provided data points into a 2d space using t-SNE. Then, the trajectories of each instance (object) are plotted in the t-SNE space (t-SNE trajectories). The script is based on matplotlib and scikit-learn.
 Such a visualization enables visual interpretation of large amounts of data in an integrated manner. Moreover, the script allows for labelling selected objects in the first and last point in time.
 
-<img width="200" alt="World countries trajectories (1950-2020) in a space of population size, age, and sex" src="https://github.com/johannesuhl/multivariate_trajectory_viz/blob/main/tsne_trajectories.jpg">
+<img width="750" alt="World countries trajectories (1950-2020) in a space of population size, age, and sex" src="https://github.com/johannesuhl/multivariate_trajectory_viz/blob/main/tsne_trajectories.jpg">
+World countries trajectories (1950-2020) in a t-SNE space of population size, age, and sex (blue=1950,red=2020).
 
 The script uses longitudinal data on population size, age, and sex for each country in the world for each decade from 1950-2020 (United Nations 2019). 
 
