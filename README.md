@@ -13,6 +13,7 @@ The script exemplarily uses longitudinal data on population size, age, and sex f
 
 # References
 Maaten, L. V. D., & Hinton, G. (2008). Visualizing data using t-SNE. Journal of machine learning research, 9(Nov), 2579-2605.
+
 United Nations, Department of Economic and Social Affairs, Population Division (2019). World Population Prospects 2019 - Special Aggregates, Online Edition. Rev. 1.
 
 # Source datasets:
