@@ -7,7 +7,9 @@ The script multivariate_temporal_trajectories_visualization.py allows for readin
 
 Such a visualization enables visual interpretation of large amounts of data in an integrated manner. Moreover, the script allows for labelling selected objects in the first and last point in time.
 
-The script exemplarily uses longitudinal data on population size, age, and sex for each country in the world for each decade from 1950-2020 (United Nations 2019). The resulting figure shows the world countries trajectories (1950-2020) in a t-SNE space of population size, age, and sex (blue=1950,red=2020):
+The script exemplarily uses longitudinal data on population size, age, and sex for each country in the world for each decade from 1950-2020 (United Nations 2019). The resulting figure shows the world countries trajectories (1950-2020) in a t-SNE space of population size, age, and sex:
+
+<img width="800" alt="World countries trajectories (1950-2020) in a space of population size, age, and sex" src="https://github.com/johannesuhl/multivariate_trajectory_viz/blob/main/tsne_trajectories.jpg">
 
 # References
 Maaten, L. V. D., & Hinton, G. (2008). Visualizing data using t-SNE. Journal of machine learning research, 9(Nov), 2579-2605.
