@@ -6,6 +6,9 @@ Created on Sun Nov 08 14:28:40 2020
 """
 
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+from matplotlib.cm import ScalarMappable
+from matplotlib.colors import Normalize
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt    
@@ -69,29 +72,6 @@ for year in years:
 
 ###############################################################################
 
-fig,ax=plt.subplots()
-ax.scatter(x=datadf['medianage'].values,y=np.log(datadf['pop'].values),s=1,alpha=0.5)
-ax.set_ylabel('Log(Population)')
-ax.set_xlabel('Median age')
-plt.show()
-fig.savefig('scat_pop_medage.jpg',dpi=90) 
-
-fig,ax=plt.subplots()
-ax.scatter(x=datadf['sexratio'].values,y=np.log(datadf['pop'].values),s=1,alpha=0.5)
-ax.set_ylabel('Log(Population)')
-ax.set_xlabel('Women per 100 men')
-plt.show()
-fig.savefig('scat_pop_sexratio.jpg',dpi=90) 
-
-fig,ax=plt.subplots()
-ax.scatter(x=datadf['medianage'].values,y=datadf['sexratio'].values,s=1,alpha=0.5)
-ax.set_xlabel('Median age')
-ax.set_ylabel('Women per 100 men')
-plt.show()
-fig.savefig('scat_medianage_sexratio.jpg',dpi=90)
-
-###############################################################################
-
 datadf=datadf.sort_values(by=['object','time'])
 
 #transform to log, assumed to be skewed
@@ -139,8 +119,14 @@ for objid,objdf in datadf.groupby('object'):
                 plt.annotate(obj_dict[objid]+' %s' %years[count], (currptsx[segment], currptsy[segment]),color='white',fontsize=8,zorder=2)
                 plt.scatter(x=currptsx[segment], y=currptsy[segment],c='white',s=1,zorder=2)
         count+=1
-                                 
+                                
 ax = plt.gca()
-ax.set_facecolor('black')         
+ax.set_facecolor('black')   
+ax.set_xlabel('t-SNE 1')
+ax.set_ylabel('t-SNE 2')  
 plt.show()
+cmappable = ScalarMappable(Normalize(years[0],years[-1]),cmap=cmap)
+cmappable.set_array([years[0],years[-1]])
+fig.colorbar(cmappable)
+#fig.colorbar(cm.ScalarMappable(norm=cNorm,cmap=cmap))     
 fig.savefig('tsne_trajectories.jpg',dpi=150)    
